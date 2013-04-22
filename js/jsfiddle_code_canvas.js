@@ -1,3 +1,5 @@
+//Uncomment functions to run them
+
 var canv = document.getElementById("canv");
 var ctx = canv.getContext("2d");
 ctx.fillStyle = "#FF0000";
