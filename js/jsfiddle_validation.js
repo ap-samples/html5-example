@@ -8,30 +8,30 @@ var emailExpr = /^.+@.+$/;
 var websiteExpr = /^.+\..+$/;
 var error_msg_elem = document.getElementById("validation-errors");
 var validatedElemArr = new Array();
-var errorMessagesArr = {'person-email' : 'Error - email incorrect<br>',
-                        'person-website' : 'Error - website incorrect<br>',
-                        'first-name' : 'Error - name must contain letters only<br>',
-                        'person-desc' : 'Text area can contain 200 symbols max<br>'};
+var errorMessagesArr = new Array();
 
 //Fill array of validated elements like (element_name => is_invalid)
 var inputs = document.getElementsByTagName('input');
 for (var i=0;i<inputs.length;i++){
-     validatedElemArr[inputs[i].getAttribute('name')] = false;       
+     validatedElemArr[inputs[i].getAttribute('name')] = false;
+     errorMessagesArr[inputs[i].getAttribute('name')] = inputs[i].getAttribute('data-error-msg');
 }
 var textareas = document.getElementsByTagName('textarea');
 for (i=0;i<textareas.length;i++){
-    validatedElemArr[textareas[i].getAttribute('name')] = false;        
+    validatedElemArr[textareas[i].getAttribute('name')] = false;
+    errorMessagesArr[textareas[i].getAttribute('name')] = textareas[i].getAttribute('data-error-msg');
+    console.info('Test ' + textareas[i].getAttribute('data-error-msg'))
 }
 
 function ReportError(key){
      validatedElemArr[key] = true;
-     console.log('rep_error '+key);
+     //console.log('rep_error '+key);
      PrintErrorMessages();
 }
 
 function ReportFixed(key){
     validatedElemArr[key] = false;
-    console.log('rep_fixed '+key);
+    //console.log('rep_fixed '+key);
     PrintErrorMessages();
 }
 
@@ -68,14 +68,13 @@ function MakeRegexValidation(elem,error_msg_elem,regex_expr){
     else ReportFixed(elem.getAttribute('name'));
 }
 
-function EnsureMaxSymbolLimit(elem,error_msg_elem,e){
-    console.info(e.keyCode);
+function EnsureMaxSymbolLimit(elem,error_msg_elem,evt){
     //If key pressed is delete/backspace - return
-    if(e.keyCode == 46 || e.keyCode == 8)
+    if(evt.keyCode == 46 || evt.keyCode == 8)
         return;
     if(elem.value.length > 200){
         ReportError(elem.getAttribute('name'));
-        e.preventDefault();
+        evt.preventDefault();
         return false;        
     }
     else ReportFixed(elem.getAttribute('name'));

@@ -8,17 +8,21 @@
 	<body>
 		<div id="validation-errors"></div>
 		<label for="first-name">First Name:</label>
-		<input type="text" name="first-name" onblur="ValidateName(this, document.getElementById('validation-errors'));" />
+		<input type="text" name="first-name" onblur="ValidateName(this, document.getElementById('validation-errors'));"
+		    data-error-msg="Error - name must contain letters only<br>" />
 		<br><br>
 		<label for="person-email">Email:</label>
-		<input type="email" name="person-email" onblur="ValidateEmail(this, document.getElementById('validation-errors'));" />
+		<input type="email" name="person-email" onblur="ValidateEmail(this, document.getElementById('validation-errors'));"
+		    data-error-msg="Error - email incorrect<br>" />
 		 <br><br>
 		<label for="person-website">Website:</label>
-		<input type="text" name="person-website" onblur="ValidateWebsite(this, document.getElementById('validation-errors'));" />
+		<input type="text" name="person-website" onblur="ValidateWebsite(this, document.getElementById('validation-errors'));"
+		     data-error-msg="Error - website incorrect<br>" />
 		<br><br>
 		<label for="person-desc">Description (200 chars max):</label>
 		<br>
-		<textarea id="person-desc" name="person-desc" onblur="ReportFixed(this.getAttribute('name'));"></textarea>
+		<textarea id="person-desc" name="person-desc" onblur="ReportFixed(this.getAttribute('name'));" 
+		    data-error-msg="Text area can contain 200 symbols max<br>" ></textarea>
 		
 		<script src="js/jsfiddle_validation.js"></script>
 	</body>
