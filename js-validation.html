@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Validate user input by using JavaScript</title>
+		<link rel="stylesheet" href="css/js_validation.css" />
+	</head>
+	
+	<body>
+		<div id="validation-errors"></div>
+		<label for="first-name">First Name:</label>
+		<input type="text" name="first-name" onblur="ValidateName(this, document.getElementById('validation-errors'));" />
+		<br><br>
+		<label for="person-email">Email:</label>
+		<input type="email" name="person-email" onblur="ValidateEmail(this, document.getElementById('validation-errors'));" />
+		 <br><br>
+		<label for="person-website">Website:</label>
+		<input type="text" name="person-website" onblur="ValidateWebsite(this, document.getElementById('validation-errors'));" />
+		<br><br>
+		<label for="person-desc">Description (200 chars max):</label>
+		<br>
+		<textarea id="person-desc" name="person-desc" onblur="ReportFixed(this.getAttribute('name'));"></textarea>
+		
+		<script src="js/jsfiddle_validation.js"></script>
+	</body>
+	
+</html>
