@@ -1,0 +1,13 @@
+#box-div{
+    width:200px;
+    height:100px;
+    border:2px solid #111;
+    border-radius: 0px;
+}
+
+#box-shadow-div{
+    width:200px;
+    height:100px;
+    background:#888;
+    border:1px solid #555;
+}

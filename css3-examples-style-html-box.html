@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>Style HTML box properties</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Arturs.Peka" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="stylesheet" href="css/css3_exmpl.css" />
+		<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+	</head>
+	<body>
+		<label for="name-border">Border radius:</label><br>
+		<button id="btn-dec" onclick="borderRadChange('dec');">-</button> <input type="text" name="border-rad" id="border-rad" value="0" />
+		<button id="btn-inc" onclick="borderRadChange('inc');">+</button>
+		
+		<br><br>
+		    
+		<div id="box-div"></div>
+		    
+		<br><br>
+		
+		<label for="h-shadow">Horiz. pos. of shadow:</label>
+		<button id="btn-hs-dec" onclick="boxShadowChange(-1,0,0);">-</button>    
+			<input type="text" name="h-shadow" id="h-shadow" value="0" />
+		<button id="btn-hs-inc" onclick="boxShadowChange(1,0,0);">+</button>
+		<br>
+		<label for="v-shadow">Vert. pos. of shadow</label>
+		<button id="btn-vs-dec" onclick="boxShadowChange(0,-1,0);">-</button> 
+			<input type="text" name="v-shadow" id="v-shadow" value="0" />
+		<button id="btn-vs-inc" onclick="boxShadowChange(0,1,0);">+</button> 
+		<br>
+		<label for="blur-spread">Blur spread:</label>
+		<button id="btn-bs-dec" onclick="boxShadowChange(0,0,-1);">-</button>
+			<input type="text" name="blur-spread" id="blur-spread" value="0" />
+		<button id="btn-bs-dec" onclick="boxShadowChange(0,0,1);">+</button>
+			
+		<br><br>
+		
+		<div id="box-shadow-div"></div>
+		
+		<script src="js/css3_exmpl.js"></script> 
+	</body>
+</html>
