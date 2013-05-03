@@ -1,4 +1,4 @@
 html5-example
 =============
 
-This is repository with various HTML5/CSS3 samples. Making it for myself mostly, but in hope that someone else can learn from them, too.
+This is repository with various front-end web programming samples (using HTML5/CSS3 where possible).
